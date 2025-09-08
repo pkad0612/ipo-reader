@@ -1,0 +1,10 @@
+name = "ipo-reader-frontend"
+compatibility_date = "2024-09-01"
+
+# Cloudflare Pages build output (Next.js handled automatically)
+pages_build_output_dir = ".vercel/output/static"
+
+# Bindings: these map to your Hugging Face backend
+[vars]
+HF_BASE_URL = "https://<your-hf-space-or-endpoint>"   # ⚡ change this
+HF_API_TOKEN = "hf_xxx"                               # optional if private
