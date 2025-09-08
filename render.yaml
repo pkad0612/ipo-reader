@@ -1,19 +1,15 @@
-# render.yaml
 services:
   - type: web
     name: ipo-backend
     env: docker
-    plan: free           # or starter
+    plan: free
+    dockerfilePath: backend/Dockerfile
     healthCheckPath: /health
-    disk:
-      name: data
-      mountPath: /data
-      sizeGB: 5
     envVars:
       - key: DATA_DIR
-        value: /data
+        value: /tmp/data
       - key: ALLOWED_ORIGINS
-        value: https://YOUR-FRONTEND.vercel.app
+        value: http://localhost:3000,https://YOUR-APP.vercel.app
       - key: TRANSFORMERS_CACHE
         value: /tmp/hf
       - key: HF_HOME
